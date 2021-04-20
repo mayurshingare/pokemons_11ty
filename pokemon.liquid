@@ -13,29 +13,14 @@ permalink: "{{ pokemon.name | slug }}/"
     <div class="card-img-top">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                {% if pokemon.sprites.back_default %}
-                <div class="carousel-item active">
-                    <img src="{{ pokemon.sprites.back_default }}" class="d-block mx-auto">
-                </div>
-                {% endif %}
-                {% if pokemon.sprites.back_female %}
-                <div class="carousel-item">
-                    <img src="{{ pokemon.sprites.back_female }}" class="d-block mx-auto">
-                </div>
-                {% endif %}
-                {% if pokemon.sprites.back_shiny %}
-                <div class="carousel-item">
-                    <img src="{{ pokemon.sprites.back_shiny }}" class="d-block mx-auto">
-                </div>
-                {% endif %}
-                {% if pokemon.sprites.back_shiny_female %}
-                <div class="carousel-item">
-                    <img src="{{ pokemon.sprites.back_shiny_female }}" class="d-block mx-auto">
-                </div>
-                {% endif %}
                 {% if pokemon.sprites.front_default %}
-                <div class="carousel-item">
+                <div class="carousel-item active">
                     <img src="{{ pokemon.sprites.front_default }}" class="d-block mx-auto">
+                </div>
+                {% endif %}
+                {% if pokemon.sprites.back_default %}
+                <div class="carousel-item">
+                    <img src="{{ pokemon.sprites.back_default }}" class="d-block mx-auto">
                 </div>
                 {% endif %}
                 {% if pokemon.sprites.front_female %}
@@ -43,14 +28,29 @@ permalink: "{{ pokemon.name | slug }}/"
                     <img src="{{ pokemon.sprites.front_female }}" class="d-block mx-auto">
                 </div>
                 {% endif %}
+                {% if pokemon.sprites.back_female %}
+                <div class="carousel-item">
+                    <img src="{{ pokemon.sprites.back_female }}" class="d-block mx-auto">
+                </div>
+                {% endif %}
                 {% if pokemon.sprites.front_shiny %}
                 <div class="carousel-item">
                     <img src="{{ pokemon.sprites.front_shiny }}" class="d-block mx-auto">
                 </div>
                 {% endif %}
+                {% if pokemon.sprites.back_shiny %}
+                <div class="carousel-item">
+                    <img src="{{ pokemon.sprites.back_shiny }}" class="d-block mx-auto">
+                </div>
+                {% endif %}
                 {% if pokemon.sprites.front_shiny_female %}
                 <div class="carousel-item">
                     <img src="{{ pokemon.sprites.front_shiny_female }}" class="d-block mx-auto">
+                </div>
+                {% endif %}
+                {% if pokemon.sprites.back_shiny_female %}
+                <div class="carousel-item">
+                    <img src="{{ pokemon.sprites.back_shiny_female }}" class="d-block mx-auto">
                 </div>
                 {% endif %}
             </div>
