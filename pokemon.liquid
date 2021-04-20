@@ -78,22 +78,22 @@ permalink: "{{ pokemon.name | slug }}/"
     </ul>
     <nav class="btn-group" role="group">
         {% if page.url != pagination.href.first %}
-        <a class="btn btn-primary" href="{{ pagination.href.first }}" aria-label="First">First</a>
+        <a class="btn btn-primary" href="{{ pagination.href.first | url }}" aria-label="First">First</a>
         {% else %}
         <a class="btn btn-secondary" href="#" aria-label="First">First</a>
         {% endif %}
         {% if pagination.href.previous %}
-        <a class="btn btn-primary" href="{{ pagination.href.previous }}" aria-label="Previous">Prev</a>
+        <a class="btn btn-primary" href="{{ pagination.href.previous | url }}" aria-label="Previous">Prev</a>
         {% else %}
         <a class="btn btn-secondary" href="#" aria-label="Previous">Previous</a>
         {% endif %}
         {% if pagination.href.next %}
-            <a class="btn btn-primary" href="{{ pagination.href.next }}" aria-label="Next">Next</a>
+            <a class="btn btn-primary" href="{{ pagination.href.next | url }}" aria-label="Next">Next</a>
         {% else %}
         <a class="btn btn-secondary" href="#" aria-label="Next">Next</a>
         {% endif %}
         {% if page.url != pagination.href.last %}
-            <a class="btn btn-primary" href="{{ pagination.href.last }}" aria-label="Last">Last</a>
+            <a class="btn btn-primary" href="{{ pagination.href.last | url }}" aria-label="Last">Last</a>
         {% else %}
             <a class="btn btn-secondary" href="#" aria-label="Next">Next</a>
         {% endif %}
