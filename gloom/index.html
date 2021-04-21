@@ -10,9 +10,25 @@
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
     <style>
-    .bg-purple{
-        background-color:#9A32CD;
-    }
+        .bg-purple {
+            background-color: #9A32CD;
+        }
+
+        #previousButton {
+            position: fixed; /* Fixed/sticky position */
+            bottom: 50%; /* Place the button at the bottom of the page */
+            left: 10px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: none; /* Remove borders */
+        }
+
+        #nextButton {
+            position: fixed; /* Fixed/sticky position */
+            bottom: 50%; /* Place the button at the bottom of the page */
+            right: 10px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: none; /* Remove borders */
+        }
     </style>
 </head>
 <nav class="navbar bg-dark ">
@@ -22,12 +38,26 @@
 </nav>
 
 <body class="text-white bg-dark">
+    
+    <div id="previousButton">
+        <a class="" href="/pokemons_11ty/oddish/" aria-label="Previous">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+    </div>
+    
+    
+    <div id="nextButton">
+        <a class="" href="/pokemons_11ty/vileplume/" aria-label="Next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    
     <div class="card border-primary bg-dark text-white">
     <div class="card-header h3">
         <span class="text-capitalize">#44 gloom</span>
     </div>
     <div class="card-img-top">
-        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div id="imageCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 
                 <div class="carousel-item active">
@@ -70,16 +100,6 @@
                 </div>
                 
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </div>
     <table class="table table-dark table-striped">
@@ -378,7 +398,7 @@
         
         <a class="btn btn-primary" href="/pokemons_11ty/mew/" aria-label="Last">Last</a>
         
-    </nav>
+    </nav>   
 </div>
 </body>
 
