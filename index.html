@@ -12,129 +12,200 @@
 </head>
 <nav class="navbar bg-dark ">
     <div class="container-fluid">
-      <a class="navbar-brand text-white" href="/pokemons_11ty/">PokeDex</a>
+        <a class="navbar-brand text-white" href="/pokemons_11ty/">PokeDex</a>
     </div>
 </nav>
+
 <body class="text-white bg-dark">
-    <ul class="list-group list-group-flush ">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $("#listFilter").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#pokemonList li.pokemon-data").filter(function () {
+                $(this).toggle($(this).find("a").text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+<ul class="list-group list-group-flush " id="pokemonList">
     <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="bulbasaur/">
+        <input type="filter" class="list-group-item form-control" id="listFilter" placeholder="Filter by name...">
+    </li>
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="bulbasaur/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" style="max-height: 4em;"></img>
             #1 bulbasaur
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="ivysaur/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="ivysaur/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" style="max-height: 4em;"></img>
             #2 ivysaur
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="venusaur/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="venusaur/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png" style="max-height: 4em;"></img>
             #3 venusaur
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="charmander/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="charmander/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" style="max-height: 4em;"></img>
             #4 charmander
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="charmeleon/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="charmeleon/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png" style="max-height: 4em;"></img>
             #5 charmeleon
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="charizard/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="charizard/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" style="max-height: 4em;"></img>
             #6 charizard
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="squirtle/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="squirtle/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" style="max-height: 4em;"></img>
             #7 squirtle
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="wartortle/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="wartortle/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png" style="max-height: 4em;"></img>
             #8 wartortle
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="blastoise/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="blastoise/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png" style="max-height: 4em;"></img>
             #9 blastoise
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="caterpie/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="caterpie/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png" style="max-height: 4em;"></img>
             #10 caterpie
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="metapod/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="metapod/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png" style="max-height: 4em;"></img>
             #11 metapod
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="butterfree/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="butterfree/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png" style="max-height: 4em;"></img>
             #12 butterfree
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="weedle/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="weedle/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png" style="max-height: 4em;"></img>
             #13 weedle
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="kakuna/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="kakuna/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png" style="max-height: 4em;"></img>
             #14 kakuna
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="beedrill/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="beedrill/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png" style="max-height: 4em;"></img>
             #15 beedrill
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="pidgey/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="pidgey/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png" style="max-height: 4em;"></img>
             #16 pidgey
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="pidgeotto/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="pidgeotto/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png" style="max-height: 4em;"></img>
             #17 pidgeotto
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="pidgeot/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="pidgeot/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png" style="max-height: 4em;"></img>
             #18 pidgeot
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="rattata/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="rattata/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png" style="max-height: 4em;"></img>
             #19 rattata
         </a>
     </li>
-    <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="raticate/">
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="raticate/">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png" style="max-height: 4em;"></img>
             #20 raticate
+        </a>
+    </li>
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="spearow/">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png" style="max-height: 4em;"></img>
+            #21 spearow
+        </a>
+    </li>
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="fearow/">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png" style="max-height: 4em;"></img>
+            #22 fearow
+        </a>
+    </li>
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="ekans/">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png" style="max-height: 4em;"></img>
+            #23 ekans
+        </a>
+    </li>
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="arbok/">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png" style="max-height: 4em;"></img>
+            #24 arbok
+        </a>
+    </li>
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="pikachu/">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" style="max-height: 4em;"></img>
+            #25 pikachu
         </a>
     </li>
 </ul>
