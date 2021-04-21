@@ -11,7 +11,7 @@ permalink: "{{ pokemon.name | slug }}/"
         <span class="text-capitalize">#{{ pokemon.id }} {{ pokemon.name }}</span>
     </div>
     <div class="card-img-top">
-        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div id="imageCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 {% if pokemon.sprites.front_default %}
                 <div class="carousel-item active">
@@ -54,16 +54,6 @@ permalink: "{{ pokemon.name | slug }}/"
                 </div>
                 {% endif %}
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </div>
     <table class="table table-dark table-striped">
@@ -71,7 +61,7 @@ permalink: "{{ pokemon.name | slug }}/"
             <td style="width:30%;">Type</td>
             <td class="text-capitalize">
                 {%- for type in pokemon.types %}
-                <span class="badge bg-primary rounded-pill px-2 mt-2">{{ type.type.name }} </span>
+                <span class="badge bg-gradient rounded-pill px-2 mt-2 {{ type.type.name }}">{{ type.type.name }} </span>
                 {%- endfor %}
             </td>
         </tr>
@@ -87,7 +77,7 @@ permalink: "{{ pokemon.name | slug }}/"
             <td class="text-capitalize">{{ stat.stat.name }}</td>
             <td>
                 <div class="progress">
-                    <div class="progress-bar {{ type }}" role="progressbar" style="width: {{ stat.base_stat }}%"
+                    <div class="progress-bar {{ type }} bg-gradient fw-bold" role="progressbar" style="width: {{ stat.base_stat }}%"
                         aria-valuenow="{{ stat.base_stat }}" aria-valuemin="0" aria-valuemax="100">{{ stat.base_stat }}
                     </div>
                 </div>
@@ -98,7 +88,7 @@ permalink: "{{ pokemon.name | slug }}/"
             <td>Moves</td>
             <td>
                 {%- for move in pokemon.moves %}
-                <span class="badge bg-primary mt-2 px-2 text-capitalize">
+                <span class="badge bg-purple bg-gradient mt-2 px-2 text-capitalize">
                     {{ move.move.name }}
                 </span>
                 {%- endfor %}
@@ -108,7 +98,7 @@ permalink: "{{ pokemon.name | slug }}/"
             <td>Abilities</td>
             <td>
                 {%- for ability in pokemon.abilities %}
-                <span class="badge bg-primary mt-2 px-2 text-capitalize">
+                <span class="badge bg-purple bg-gradient mt-2 px-2 text-capitalize">
                     {{ ability.ability.name }}
                 </span>
                 {%- endfor %}
@@ -136,5 +126,5 @@ permalink: "{{ pokemon.name | slug }}/"
         {% else %}
         <a class="btn btn-secondary" href="#" aria-label="Next">Next</a>
         {% endif %}
-    </nav>
+    </nav>   
 </div>

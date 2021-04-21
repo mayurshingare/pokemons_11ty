@@ -1,0 +1,91 @@
+.grass {
+  background-color: #32964d;
+}
+.shadow {
+  background-color: #888b86;
+  color:#000000;
+}
+.dark {
+  background-color: #191a19;
+}
+.flying {
+  background-color: #79e3f9;
+  color: #000000;
+}
+.dragon {
+  background-color: #8d3030;
+  color:yellow;
+}
+.rock {
+  background-color: #122027;
+}
+.fighting {
+  background-color: #dd832e;
+  color: #000000;
+}
+.poison {
+  background-color: #6f1996;
+}
+.unknown {
+  background-color: #200606;
+}
+.psychic {
+  background-color: #f029a8;
+}
+.ice {
+  background-color: #37bdf1;
+  color: white;
+}
+.ghost {
+  background-color: #7e79eb;
+  color:blue;
+}
+.water {
+  background-color: #4ca2f3;
+  color:blue;
+}
+.fairy {
+  background-color: #f53fe6;
+  color:pink;
+}
+.ground {
+  background-color: #673d17;
+  color:yellow;
+}
+.normal {
+  background-color: #fa9c22;
+  color:black;
+}
+.fire {
+  background-color: #e23209;
+  color:yellow;
+}
+.electric {
+  background-color: #f3d426;
+  color: red;
+}
+.steel {
+  background-color: #445055;
+}
+.bug {
+  background-color: #199409;
+}
+.bg-purple {
+  background-color: #9a32cd;
+}
+
+#previousButton {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 50%; /* Place the button at the bottom of the page */
+  left: 10px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+}
+
+#nextButton {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 50%; /* Place the button at the bottom of the page */
+  right: 10px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+}
