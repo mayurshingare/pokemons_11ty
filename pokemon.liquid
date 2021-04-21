@@ -6,9 +6,9 @@ pagination:
     alias: pokemon
 permalink: "{{ pokemon.name | slug }}/"
 ---
-<div class="card border-primary text-white bg-dark">
+<div class="card border-primary bg-dark text-white">
     <div class="card-header h3">
-        <span class="text-capitalize">{{ pokemon.name }}</span>
+        <span class="text-capitalize">#{{ pokemon.id }} {{ pokemon.name }}</span>
     </div>
     <div class="card-img-top">
         <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -66,16 +66,55 @@ permalink: "{{ pokemon.name | slug }}/"
             </button>
         </div>
     </div>
-    <ul class="list-group list-group-flush ">
-        <li class="list-group-item text-white bg-dark">Pokemon#: {{ pokemon.id }}</li>
-        <li class="list-group-item text-white bg-dark">Height: {{ pokemon.height }} </li>
-        <li class="list-group-item text-white bg-dark">Weight: {{ pokemon.weight }}</li>
-        <li class="list-group-item text-white bg-dark">Type: 
-            {%- for type in pokemon.types %}
-                {{ type.type.name }}&comma;
-            {%- endfor %}
-        </li>
-    </ul>
+    <table class="table table-dark table-striped">
+        <tr>
+            <td style="width:30%;">Type</td>
+            <td class="text-capitalize">
+                {%- for type in pokemon.types %}
+                <span class="badge bg-primary rounded-pill px-2 mt-2">{{ type.type.name }} </span>
+                {%- endfor %}
+            </td>
+        </tr>
+        {%- for stat in pokemon.stats %}
+        {% if stat.base_stat >= 75 %}
+        {% assign type="bg-success" %}
+        {% elsif stat.base_stat >= 50 %}
+        {% assign type="bg-warning" %}
+        {% else %}
+        {% assign type="bg-danger" %}
+        {% endif %}
+        <tr>
+            <td class="text-capitalize">{{ stat.stat.name }}</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar {{ type }}" role="progressbar" style="width: {{ stat.base_stat }}%"
+                        aria-valuenow="{{ stat.base_stat }}" aria-valuemin="0" aria-valuemax="100">{{ stat.base_stat }}
+                    </div>
+                </div>
+            </td>
+        </tr>
+        {%- endfor %}
+        <tr>
+            <td>Moves</td>
+            <td>
+                {%- for move in pokemon.moves %}
+                <span class="badge bg-primary mt-2 px-2 text-capitalize">
+                    {{ move.move.name }}
+                </span>
+                {%- endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>Abilities</td>
+            <td>
+                {%- for ability in pokemon.abilities %}
+                <span class="badge bg-primary mt-2 px-2 text-capitalize">
+                    {{ ability.ability.name }}
+                </span>
+                {%- endfor %}
+            </td>
+        </tr>
+    </table>
     <nav class="btn-group" role="group">
         {% if page.url != pagination.href.first %}
         <a class="btn btn-primary" href="{{ pagination.href.first | url }}" aria-label="First">First</a>
@@ -88,14 +127,14 @@ permalink: "{{ pokemon.name | slug }}/"
         <a class="btn btn-secondary" href="#" aria-label="Previous">Previous</a>
         {% endif %}
         {% if pagination.href.next %}
-            <a class="btn btn-primary" href="{{ pagination.href.next | url }}" aria-label="Next">Next</a>
+        <a class="btn btn-primary" href="{{ pagination.href.next | url }}" aria-label="Next">Next</a>
         {% else %}
         <a class="btn btn-secondary" href="#" aria-label="Next">Next</a>
         {% endif %}
         {% if page.url != pagination.href.last %}
-            <a class="btn btn-primary" href="{{ pagination.href.last | url }}" aria-label="Last">Last</a>
+        <a class="btn btn-primary" href="{{ pagination.href.last | url }}" aria-label="Last">Last</a>
         {% else %}
-            <a class="btn btn-secondary" href="#" aria-label="Next">Next</a>
+        <a class="btn btn-secondary" href="#" aria-label="Next">Next</a>
         {% endif %}
     </nav>
 </div>
