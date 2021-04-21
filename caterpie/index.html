@@ -17,9 +17,9 @@
 </nav>
 
 <body class="text-white bg-dark">
-    <div class="card border-primary text-white bg-dark">
+    <div class="card border-primary bg-dark text-white">
     <div class="card-header h3">
-        <span class="text-capitalize">caterpie</span>
+        <span class="text-capitalize">#10 caterpie</span>
     </div>
     <div class="card-img-top">
         <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -61,14 +61,127 @@
             </button>
         </div>
     </div>
-    <ul class="list-group list-group-flush ">
-        <li class="list-group-item text-white bg-dark">Pokemon#: 10</li>
-        <li class="list-group-item text-white bg-dark">Height: 3 </li>
-        <li class="list-group-item text-white bg-dark">Weight: 29</li>
-        <li class="list-group-item text-white bg-dark">Type:
-                bug&comma;
-        </li>
-    </ul>
+    <table class="table table-striped">
+        <tr>
+            <td>Type</td>
+            <td class="text-capitalize">
+                <span class="badge bg-primary rounded-pill px-2 mt-2">bug </span>
+            </td>
+        </tr>
+        
+            
+        
+        <tr>
+            <td class="text-capitalize">hp</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45</div>
+                  </div>
+            </td>
+        </tr>
+        
+            
+        
+        <tr>
+            <td class="text-capitalize">attack</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30</div>
+                  </div>
+            </td>
+        </tr>
+        
+            
+        
+        <tr>
+            <td class="text-capitalize">defense</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">35</div>
+                  </div>
+            </td>
+        </tr>
+        
+            
+        
+        <tr>
+            <td class="text-capitalize">special-attack</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20</div>
+                  </div>
+            </td>
+        </tr>
+        
+            
+        
+        <tr>
+            <td class="text-capitalize">special-defense</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20</div>
+                  </div>
+            </td>
+        </tr>
+        
+            
+        
+        <tr>
+            <td class="text-capitalize">speed</td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45</div>
+                  </div>
+            </td>
+        </tr>
+    </table>
+    <div class="accordion accordion-flush" id="pokemon-details">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="pokemonMovesID">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Moves
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="pokemonMovesID"
+                data-bs-parent="pokemon-details">
+                <span class="badge bg-primary mt-2 px-2 text-capitalize">
+                    tackle
+                </span>
+                <span class="badge bg-primary mt-2 px-2 text-capitalize">
+                    string-shot
+                </span>
+                <span class="badge bg-primary mt-2 px-2 text-capitalize">
+                    snore
+                </span>
+                <span class="badge bg-primary mt-2 px-2 text-capitalize">
+                    bug-bite
+                </span>
+                <span class="badge bg-primary mt-2 px-2 text-capitalize">
+                    electroweb
+                </span>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="pokemonAbilitiesID">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Abilities
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="pokemonAbilitiesID"
+                data-bs-parent="pokemon-details">
+                <ul class="list-group">
+                    <li class="list-group-item text-capitalize">
+                        shield-dust
+                    </li>
+                    <li class="list-group-item text-capitalize">
+                        run-away
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <nav class="btn-group" role="group">
         
         <a class="btn btn-primary" href="/pokemons_11ty/bulbasaur/" aria-label="First">First</a>
@@ -77,10 +190,10 @@
         <a class="btn btn-primary" href="/pokemons_11ty/blastoise/" aria-label="Previous">Prev</a>
         
         
-            <a class="btn btn-primary" href="/pokemons_11ty/metapod/" aria-label="Next">Next</a>
+        <a class="btn btn-primary" href="/pokemons_11ty/metapod/" aria-label="Next">Next</a>
         
         
-            <a class="btn btn-primary" href="/pokemons_11ty/pikachu/" aria-label="Last">Last</a>
+        <a class="btn btn-primary" href="/pokemons_11ty/pikachu/" aria-label="Last">Last</a>
         
     </nav>
 </div>
