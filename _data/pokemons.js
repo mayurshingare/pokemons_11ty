@@ -2,7 +2,7 @@ const axios = require('axios');
 
 module.exports = async () => {
     var pokemons = [];
-    const response = await axios.get('https://pokeapi.co/api/v2/pokemon/');
+    const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=25');
     for (const element of response.data.results) {
         const response2 = await axios.get(element.url);
         pokemons.push(response2.data);

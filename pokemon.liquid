@@ -11,7 +11,7 @@ permalink: "{{ pokemon.name | slug }}/"
         <span class="text-capitalize">{{ pokemon.name }}</span>
     </div>
     <div class="card-img-top">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 {% if pokemon.sprites.front_default %}
                 <div class="carousel-item active">

@@ -1,10 +1,26 @@
 ---
 layout: layout.liquid
 ---
-<ul class="list-group list-group-flush ">
-    {%- for pokemon in pokemons %}
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $("#listFilter").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#pokemonList li.pokemon-data").filter(function () {
+                $(this).toggle($(this).find("a").text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+<ul class="list-group list-group-flush " id="pokemonList">
     <li>
-        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize" href="{{ pokemon.name | slug }}/">
+        <input type="filter" class="list-group-item form-control" id="listFilter" placeholder="Filter by name...">
+    </li>
+    {%- for pokemon in pokemons %}
+    <li class="pokemon-data">
+        <a class="list-group-item list-group-item-action list-group-item-dark text-capitalize"
+            href="{{ pokemon.name | slug }}/">
             <img src="{{ pokemon.sprites.front_default }}" style="max-height: 4em;"></img>
             #{{ pokemon.id}} {{pokemon.name}}
         </a>
